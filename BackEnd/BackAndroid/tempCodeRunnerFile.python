@@ -1,0 +1,13 @@
+import google.generativeai as genai
+import os
+
+# Set your API key securely
+os.environ["GOOGLE_API_KEY"] = "AIzaSyBSeBQtyV4Moljd1WvE3Gp1Qehxy_9m08Q"  # Replace YOUR_API_KEY with your actual key
+genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
+
+# Initialize the Gemini model
+model = genai.GenerativeModel("gemini-1.5-flash")
+
+# Generate content
+response = model.generate_content("i'm a poor student in tunisia how find money ")
+print(response.text)
